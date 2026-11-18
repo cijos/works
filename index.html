@@ -46,6 +46,10 @@
   .shot { background: var(--chip); border-right: 1px solid var(--line); min-height: 300px; overflow: hidden; }
   .work:nth-child(even) .shot { border-right: none; border-left: 1px solid var(--line); }
   .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .shot.phones { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 18px; align-content: center; background: linear-gradient(160deg, var(--accent-soft), var(--chip)); }
+  .phones figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .phones img { width: 100%; height: auto; max-height: 340px; object-fit: cover; object-position: top; border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 6px 16px rgba(0,0,0,.12); background: var(--surface); }
+  .phones figcaption { font-size: .78rem; color: var(--muted); font-weight: 500; }
   .body { padding: 26px 28px; display: flex; flex-direction: column; gap: 12px; }
   .kind { font-size: .78rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
   h2 { margin: 0; font-size: 1.4rem; line-height: 1.25; }
@@ -68,6 +72,9 @@
     .work:nth-child(even) .shot { order: 0; border-left: none; }
     .shot { border-right: none; border-bottom: 1px solid var(--line); aspect-ratio: 16 / 10; min-height: 0; }
     .body { padding: 20px 18px; }
+    .shot.phones { aspect-ratio: auto; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 16px; }
+    .phones figure { flex: 0 0 46%; scroll-snap-align: start; }
+    .phones img { max-height: none; }
   }
 </style>
 </head>
@@ -122,7 +129,12 @@
   </article>
 
   <article class="work">
-    <div class="shot"><img src="img/merlion-app.jpg" alt="Merlion app login screen with the Merlion Food Products logo" loading="lazy" /></div>
+    <div class="shot phones" tabindex="0" aria-label="Merlion app screens (sample data)">
+      <figure><img src="img/merlion-sell.jpg" alt="Sell screen: menu tiles showing how many can be made, and the cart" loading="lazy" /><figcaption>Sell</figcaption></figure>
+      <figure><img src="img/merlion-orders.jpg" alt="Orders screen: website and WhatsApp pre-orders with Accept and Payment received buttons" loading="lazy" /><figcaption>Pre-orders</figcaption></figure>
+      <figure><img src="img/merlion-menu.jpg" alt="Menu screen: cost per serving, profit and margin for each item" loading="lazy" /><figcaption>Recipe costing</figcaption></figure>
+      <figure><img src="img/merlion-stock.jpg" alt="Stock dashboard: stock value, expiring items, how many of each menu item can be made" loading="lazy" /><figcaption>Stock</figcaption></figure>
+    </div>
     <div class="body">
       <div class="kind">Billing &amp; stock app · web + Android</div>
       <h2>Merlion: billing, menu &amp; inventory</h2>
@@ -134,12 +146,17 @@
         <li>An Orders tab for website and WhatsApp pre-orders. Works offline and syncs between devices.</li>
       </ul>
       <div class="chips"><span>React PWA</span><span>Android (Capacitor)</span><span>Offline sync</span><span>Java 21 · Spring Boot 4</span><span>PostgreSQL</span><span>Docker</span></div>
-      <div class="links"><span class="private">🔒 Private owner app. Demo on request.</span></div>
+      <div class="links"><span class="private">🔒 Private owner app · screens shown with sample data · demo on request</span></div>
     </div>
   </article>
 
   <article class="work">
-    <div class="shot"><img src="img/fabric-app.jpg" alt="Fabric Affair billing and stock app login screen with the boutique logo" loading="lazy" /></div>
+    <div class="shot phones" tabindex="0" aria-label="Fabric Affair app screens (sample data)">
+      <figure><img src="img/fabric-sell.jpg" alt="Sell screen: product photos with price and stock" loading="lazy" /><figcaption>Sell</figcaption></figure>
+      <figure><img src="img/fabric-stock.jpg" alt="Stock list: products with sizes, colours, website listing and stock" loading="lazy" /><figcaption>Stock</figcaption></figure>
+      <figure><img src="img/fabric-item.jpg" alt="Product screen: cost, selling price, profit per piece and stock per size" loading="lazy" /><figcaption>Product &amp; profit</figcaption></figure>
+      <figure><img src="img/fabric-bills.jpg" alt="Bills screen: today's sales split by cash and UPI, with profit after costs" loading="lazy" /><figcaption>Bills &amp; profit</figcaption></figure>
+    </div>
     <div class="body">
       <div class="kind">Billing &amp; stock app · web + Android</div>
       <h2>Fabric Affair: billing &amp; inventory</h2>
@@ -151,7 +168,7 @@
         <li>Works offline, syncs to the shop's own server, and backs up every night.</li>
       </ul>
       <div class="chips"><span>React PWA</span><span>Android (Capacitor)</span><span>Offline sync</span><span>Java 21 · Spring Boot 4</span><span>PostgreSQL</span><span>Self-hosted</span></div>
-      <div class="links"><span class="private">🔒 Private owner app. Demo on request.</span></div>
+      <div class="links"><span class="private">🔒 Private owner app · screens shown with sample data · demo on request</span></div>
     </div>
   </article>
 
